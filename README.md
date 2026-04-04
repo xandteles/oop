@@ -1,2 +1,2 @@
 # oop
-some projects made for learning object-oriented programming
+documenting my learning progress on object-oriented programming
