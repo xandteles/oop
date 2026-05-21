@@ -13,7 +13,7 @@ public Locacao(double valorTotal, LocalDate dataInicio, LocalDate dataFim) {
 this.valorTotal = valorTotal;
 this.dataInicio = dataInicio;
 this.dataFim = dataFim;
-
+this.penis = penis;
 }
 
     public LocalDate getDataFim() {
