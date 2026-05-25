@@ -25,7 +25,7 @@ return placa;
 
 public double calcularValorLocacao() {
 
-
+return 0.0;
 }
 
 }
