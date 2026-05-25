@@ -34,4 +34,15 @@ this.idade = idade;
     public void setIdade(int idade) {
         this.idade = idade;
     }
-}
+
+
+
+    @Override
+    public String toString() {
+
+    String stringCliente = " Usuário: " + this.nome + "\n " + "CPF:  " + this.cpf + "\n " + "Idade: " + this.idade;
+
+    return stringCliente;
+        }
+    }
+

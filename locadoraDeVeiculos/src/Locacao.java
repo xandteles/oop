@@ -29,5 +29,4 @@ this.dataFim = dataFim;
     }
     long diasDeDiferenca = ChronoUnit.DAYS.between(dataInicio, dataFim);
 
-
 }
