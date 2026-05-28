@@ -1,3 +1,5 @@
+package locadora;
+
 public class Cliente {
 
 private String cpf;
