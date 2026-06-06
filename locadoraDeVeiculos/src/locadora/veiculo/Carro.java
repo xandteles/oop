@@ -7,8 +7,7 @@ public class Carro extends Veiculo{
     }
 
     @Override
-    public double calcularValorLocacao(int dias){
+    public double calcularValorLocacao(long dias){
         return getValorDiaria() * dias;
     }
 }
-
