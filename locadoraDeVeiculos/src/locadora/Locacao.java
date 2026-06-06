@@ -6,20 +6,20 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 
-public class Locacao {
+public class Locacao implements Locavel {
 
 private double valorTotal;
 private LocalDate dataInicio;
 private LocalDate dataFim;
 
 private Veiculo veiculo;
+private Cliente cliente;
 
-public Locacao(double valorTotal, LocalDate dataInicio, LocalDate dataFim, Veiculo veiculo) {
-this.valorTotal = valorTotal;
+public Locacao(Cliente cliente, Veiculo veiculo, LocalDate dataInicio, LocalDate dataFim) {
+this.cliente = cliente;
+this.veiculo = veiculo;
 this.dataInicio = dataInicio;
 this.dataFim = dataFim;
-this.veiculo = veiculo;
-
 }
 
     public LocalDate getDataFim() {
@@ -34,15 +34,21 @@ this.veiculo = veiculo;
         return valorTotal;
     }
 
+    @Override
+    public void iniciarLocacao(){
+        System.out.println("=============================");
+        System.out.println("LOCAÇÃO INICIADA COM SUCESSO!");
+        System.out.println("=============================");
+    }
 
-void iniciarLocacao(){
-    System.out.println("=============================");
-    System.out.println("LOCAÇÃO INICIADA COM SUCESSO!");
-    System.out.println("=============================");
-}
-
-void finalizarLocacao(){
-    long dias = ChronoUnit.DAYS.between(dataInicio, dataFim);
-    this.valorTotal = veiculo.getValorDiaria();
-}
+    @Override
+    public void finalizarLocacao(){
+        long dias = ChronoUnit.DAYS.between(dataInicio, dataFim);
+        this.valorTotal = veiculo.calcularValorLocacao(dias);
+        System.out.println("=============================");
+        System.out.println("LOCAÇÃO FINALIZADA!");
+        System.out.println("Total de dias: " + dias);
+        System.out.println("Valor total: R$ " + valorTotal);
+        System.out.println("=============================");
+    }
 }
